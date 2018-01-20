@@ -1,0 +1,42 @@
+<h1>Burger Tracker</h1>
+
+
+
+
+<h2>Uneaten Burgers</h2>
+<ul>
+{{#each burgers}}
+    {{#unless this.devoured}}
+    <li>
+        {{this.burger_name}}
+        <button class="change-devoured" data-id="{{id}}">DEVOUR IT!</button>
+    </li>
+    {{/unless}}
+{{/each}}
+</ul>
+
+
+
+
+<h2>Devoured Burgers</h2>
+<ul>
+	{{#each burgers}}
+	    {{#if this.devoured}}
+	    <li>
+	        {{this.burger_name}}
+	    </li>
+	    {{/if}}
+	{{/each}}
+</ul>
+
+
+
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+  <div class="form-group">
+    <label for="bur">Burger Name:</label>
+    <input type="text" id="bur" name="burger_name">
+  </div>
+  <button type="submit">Add Burger</button>
+</form>
